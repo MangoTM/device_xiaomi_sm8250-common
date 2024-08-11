@@ -13,6 +13,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+# Dolby
+#$(call inherit-product, hardware/motorolaDolby/dolby-setup.mk)
+$(call inherit-product, vendor/motorola-dolby/setup.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -561,6 +565,10 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
+
+# ViMusic
+PRODUCT_PACKAGES += \
+    ViMusic
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
